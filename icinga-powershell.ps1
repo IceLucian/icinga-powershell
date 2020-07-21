@@ -20,7 +20,7 @@ function Start-IcingaFrameworkWizard()
     $ProgressPreference = "SilentlyContinue";
 
     if ([string]::IsNullOrEmpty($RepositoryUrl)) {
-           $LatestRelease = (Invoke-WebRequest -Uri 'https://github.com/Icinga/icinga-powershell-framework/releases/latest' -UseBasicParsing).BaseResponse.ResponseUri.AbsoluteUri;
+           $LatestRelease = (Invoke-WebRequest -Uri 'https://github.com/IceLucian/icinga-powershell-files/releases/latest' -UseBasicParsing).BaseResponse.ResponseUri.AbsoluteUri;
            $RepositoryUrl = $LatestRelease.Replace('/releases/tag/', '/archive/');
            $Tag           = $RepositoryUrl.Split('/')[-1];
            $RepositoryUrl = [string]::Format('{0}/{1}.zip', $RepositoryUrl, $Tag);
