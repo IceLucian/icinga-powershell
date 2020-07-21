@@ -86,8 +86,6 @@ function Start-IcingaFrameworkWizard()
         Write-IcingaConsoleNotice 'Icinga PowerShell Framework seems to be successfully installed';
         Write-IcingaConsoleNotice 'To use the Icinga PowerShell Framework in the future, please initialize it by running the command "Use-Icinga" inside your PowerShell';
 
-        $global:IcingaFrameworkKickstartArguments = $InstallerArguments;
-
         if ($SkipWizard) {
             return;
         }
