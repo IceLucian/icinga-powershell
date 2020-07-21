@@ -95,8 +95,6 @@ function Start-IcingaFrameworkWizard()
         Write-IcingaConsoleNotice 'Starting Icinga Agent installation wizard';
             Write-IcingaConsoleNotice '=======';
             Start-IcingaAgentInstallWizard;
-        
-
     } catch {
         Write-IcingaConsoleError ([string]::Format('Unable to load the Icinga PowerShell Framework. Please check your PowerShell execution policies for possible problems. Error: {0}', $_.Exception));
     }
