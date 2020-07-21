@@ -91,12 +91,11 @@ function Start-IcingaFrameworkWizard()
         if ($SkipWizard) {
             return;
         }
-
-        if ((Read-IcingaWizardAnswerInput -Prompt 'Do you want to run the Icinga Agent installation wizard now? (You can do this later by running the command "Start-IcingaAgentInstallWizard")' -Default 'y').result -eq 1) {
-            Write-IcingaConsoleNotice 'Starting Icinga Agent installation wizard';
+        
+        Write-IcingaConsoleNotice 'Starting Icinga Agent installation wizard';
             Write-IcingaConsoleNotice '=======';
             Start-IcingaAgentInstallWizard;
-        }
+        
 
     } catch {
         Write-IcingaConsoleError ([string]::Format('Unable to load the Icinga PowerShell Framework. Please check your PowerShell execution policies for possible problems. Error: {0}', $_.Exception));
